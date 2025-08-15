@@ -5,7 +5,7 @@ import { useGSAP } from '@gsap/react'
 import { useMaskSettings } from '@/constants'
 
 const Hero = () => {
-	const { initialMaskPos, initialMaskSize, maskPos, maskSize } = useMaskSettings()
+	const { initialMaskPos, initialMaskSize, maskSize } = useMaskSettings()
 
 	useGSAP(() => {
 		gsap.set('.mask-wrapper', { maskPosition: initialMaskPos, maskSize: initialMaskSize })
