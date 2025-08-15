@@ -24,7 +24,7 @@ const SecondVideo = () => {
 				tl.to(videoRef.current, { currentTime: videoRef.current?.duration, duration: 3, ease: 'power1.inOut' }, '<')
 			}
 		}
-	}, [])
+	})
 
 	return (
 		<section className='lucia'>
