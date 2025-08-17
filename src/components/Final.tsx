@@ -29,10 +29,17 @@ const Final = () => {
 
 		tl.to('.final-content', { opacity: 1, duration: 1, scale: 1, ease: 'power1.inOut' })
 
-		if (videoRef.current) {
-			videoRef.current.onloadedmetadata = () => {
-				tl.to(videoRef.current, { currentTime: videoRef.current?.duration, duration: 3, ease: 'power1.inOut' }, '<')
-			}
+		const onloadedmetadata = () => {
+			tl.to(videoRef.current, { currentTime: videoRef.current?.duration, duration: 3, ease: 'power1.inOut' }, '<')
+		}
+		if (!videoRef.current) return
+		if (videoRef.current.readyState >= 1) {
+			onloadedmetadata()
+		} else {
+			videoRef.current.addEventListener('loadedmetadata', onloadedmetadata)
+		}
+		return () => {
+			videoRef.current?.removeEventListener('loadedmetadata', onloadedmetadata)
 		}
 	})
 

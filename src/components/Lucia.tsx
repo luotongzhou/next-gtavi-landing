@@ -16,21 +16,18 @@ const Lucia = () => {
 				}
 			})
 			.to('.second-vd', { opacity: 0, duration: 1, ease: 'power1.inOut' })
-			.to(
-				'.lucia-life .img-box',
-				{
-					scrollTrigger: {
-						trigger: '.lucia-life',
-						start: 'top center',
-						end: '80% center',
-						scrub: 2
-					},
-					y: -200,
-					duration: 1,
-					ease: 'power1.inOut'
-				},
-				'<'
-			)
+
+		gsap.to('.lucia-life .img-box', {
+			scrollTrigger: {
+				trigger: '.lucia-life',
+				start: 'top center',
+				end: '80% center',
+				scrub: 2
+			},
+			y: -200,
+			duration: 1,
+			ease: 'power1.inOut'
+		})
 	})
 	return (
 		<section className='lucia-life'>

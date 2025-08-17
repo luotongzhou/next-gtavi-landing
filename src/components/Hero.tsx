@@ -9,7 +9,7 @@ const Hero = () => {
 
 	useGSAP(() => {
 		gsap.set('.mask-wrapper', { maskPosition: initialMaskPos, maskSize: initialMaskSize })
-		gsap.set('.mask-logo', { marginTop: '-100vh', opacity: 0 })
+		// gsap.set('.mask-logo', { marginTop: '-100vh', opacity: 0 })
 		gsap.set('.entrance-message', { marginTop: '0vh' })
 
 		const tl = gsap.timeline({
@@ -69,7 +69,7 @@ const Hero = () => {
 					<Image src='/images/play.png' alt='play' width={512} height={512} className='w-7 ml-1' />
 				</div>
 			</div>
-			<div>
+			{/* <div>
 				<Image
 					src='/images/big-hero-text.svg'
 					alt='logo'
@@ -77,7 +77,7 @@ const Hero = () => {
 					height={150}
 					className='size-full object-cover mask-logo'
 				/>
-			</div>
+			</div> */}
 
 			<div className='fake-logo-wrapper'>
 				<Image src='/images/big-hero-text.svg' alt='logo' width={224} height={150} className='overlay-logo' />
